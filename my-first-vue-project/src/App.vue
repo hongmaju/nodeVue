@@ -4,7 +4,7 @@
     <h1 v-text="title"></h1>
     <h1 v-html="title"></h1>
     <ul>
-        <li v-for="item in items" class="finished">
+        <li v-for="item in items" v-bind:class="{finished:item.isFinished}">
         {{item.label}}
         </li>
     </ul>
