@@ -14,31 +14,47 @@
 </template>
 
 <script>
-
+import Store from './Store'
+//console.log(Store)
 export default {
   
    data () {
     return {
       title: '<span>?</span>this is a todolist',
-      items:[
-          {
-            label:'coding',
-            isFinished:false
+      items:Store.fetch(),
+      // items:[
+      //     {
+      //       label:'coding',
+      //       isFinished:false
   
-          },
-          {
-            label:'walking',
-            isFinished:true
+      //     },
+      //     {
+      //       label:'walking',
+      //       isFinished:true
   
-          }
-      ],
+      //     }
+      // ],
       newItem:''
     }
+  },
+  watch:{
+    items:{
+      handler:function(items){
+        // console.log(val,oldVal)
+         // console.log(items);
+
+        Store.save(items);
+         // console.log(items);
+
+      }
+    },
+    deep:true
   },
   methods:{
     toggleFinish:function(item){
       // console.log(item);
       item.isFinished=!item.isFinished;
+      console.log(this.items);
     },
     addNew:function(){
       // this.newItem;
