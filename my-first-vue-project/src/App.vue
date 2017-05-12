@@ -9,12 +9,15 @@
         {{item.label}}
         </li>
     </ul>
-
+    <p>child tells me:{{childwords}}</p>
+  <componentA msgfromfather='hongMaJu' v-on:child-tell-me-something='listenToMyBoy'></componentA>
+ <!--   <component-a></component-a> -->
   </div>
 </template>
 
 <script>
 import Store from './Store'
+import componentA from './components/componentA'
 //console.log(Store)
 export default {
   
@@ -34,9 +37,11 @@ export default {
   
       //     }
       // ],
-      newItem:''
+      newItem:'',
+      childwords:''
     }
   },
+  components:{componentA},
   watch:{
     items:{
       handler:function(items){
@@ -64,6 +69,9 @@ export default {
         isFinished:false
       })
       this.newItem='';
+    },
+    listenToMyBoy:function(msg){
+      this.childwords=msg;
     }
   }
 }
