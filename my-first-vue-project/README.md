@@ -1,6 +1,6 @@
 # my-first-vue-project
 
-> 使用的webpack来管理项目，使用的是.vue文件
+> 使用的webpack来管理项目，使用的是.vue文件,
 
 ## Build Setup
 
