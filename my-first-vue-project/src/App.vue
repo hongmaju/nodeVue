@@ -1,92 +1,45 @@
 <template>
-  <div id="app">
+  <div id="App">
     <h1>{{title}}</h1>
-    <h1 v-text="title"></h1>
-    <h1 v-html="title"></h1>
-    <input type="text" v-model="newItem" v-on:keyup.enter="addNew">
-    <ul>
-        <li v-for="item in items" v-bind:class="{finished:item.isFinished}" v-on:click="toggleFinish(item)">
-        {{item.label}}
-        </li>
-    </ul>
-    <p>child tells me:{{childwords}}</p>
-  <componentA msgfromfather='hongMaJu' v-on:child-tell-me-something='listenToMyBoy'></componentA>
- <!--   <component-a></component-a> -->
+   <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item external active" href="#">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item external" href="#">
+                    <span class="icon icon-star"></span>
+                    <span class="tab-label">收藏</span>
+                </a>
+                <a class="tab-item external" href="#">
+                    <span class="icon icon-settings"></span>
+                    <span class="tab-label">设置</span>
+                </a>
+    </nav>
+
   </div>
 </template>
 
 <script>
-import Store from './Store'
-import componentA from './components/componentA'
-//console.log(Store)
+// require('!style-loader!css-loader!./css/sm.css/./css/sm.css');// 
+// require("./css/sm.css");
+import './js/zepto.js'
+import './js/sm.js'
 export default {
   
    data () {
     return {
-      title: '<span>?</span>this is a todolist',
-      items:Store.fetch(),
-      // items:[
-      //     {
-      //       label:'coding',
-      //       isFinished:false
-  
-      //     },
-      //     {
-      //       label:'walking',
-      //       isFinished:true
-  
-      //     }
-      // ],
-      newItem:'',
-      childwords:''
+      title: '测试入口'
+      
     }
   },
-  components:{componentA},
-  watch:{
-    items:{
-      handler:function(items){
-        // console.log(val,oldVal)
-         // console.log(items);
 
-        Store.save(items);
-         // console.log(items);
-
-      }
-    },
-    deep:true
-  },
   methods:{
-    toggleFinish:function(item){
-      // console.log(item);
-      item.isFinished=!item.isFinished;
-      console.log(this.items);
-    },
-    addNew:function(){
-      // this.newItem;
-      // console.log(this.newItem);
-      this.items.push({
-        label:this.newItem,
-        isFinished:false
-      })
-      this.newItem='';
-    },
-    listenToMyBoy:function(msg){
-      this.childwords=msg;
-    }
-  }
+   }
 }
 </script>
-
 <style>
-.finished{
-  text-decoration:underline;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  
 </style>
+
+
