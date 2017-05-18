@@ -21,9 +21,10 @@
 </template>
 
 <script>
-
- import './js/jquery.js'
- import './js/light7.js'
+ //require('!style-loader!css-loader!./css/indexTest.css/./css/indexTest.css');// 
+ //require("./css/sm.css");
+// import './js/zepto.js'
+// import './js/sm.js'
 export default {
   
    data () {
@@ -32,22 +33,13 @@ export default {
       
     }
   },
-  mounted:function () {
-        //类似于jquery中的ready方法
-        this.$nextTick(function () {
-           $.config = {
-    autoInit: true //no recommend
-  }
-        })
 
-    },
   methods:{
    }
 }
 </script>
 <style>
-  @import "./css/light7.css";
-  /*@import "./css/indexTest.css";*/
+  @import "./css/indexTest.css";
 </style>
 
 

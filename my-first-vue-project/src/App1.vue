@@ -41,6 +41,7 @@ export default {
       childwords:''
     }
   },
+
   components:{componentA},
   watch:{
     items:{
