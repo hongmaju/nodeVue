@@ -21,8 +21,8 @@
 </template>
 
 <script>
-// require('!style-loader!css-loader!./css/sm.css/./css/sm.css');// 
-// require("./css/sm.css");
+ //require('!style-loader!css-loader!./css/indexTest.css/./css/indexTest.css');// 
+ //require("./css/sm.css");
 import './js/zepto.js'
 import './js/sm.js'
 export default {
