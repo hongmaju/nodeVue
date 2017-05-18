@@ -20,3 +20,6 @@ npm run build --report
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+
+
+![Image text](https://raw.githubusercontent.com/hongmaju/nodeVue/master/my-first-vue-project/src/imgs/showImgs/20170518165631.png)
