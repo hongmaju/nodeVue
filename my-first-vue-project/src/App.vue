@@ -22,8 +22,8 @@
 
 <script>
 
- import './js/jquery.js'
- import './js/light7.js'
+ // import './js/jquery.js'
+ // import './js/light7.js'
 export default {
   
    data () {
@@ -35,9 +35,9 @@ export default {
   mounted:function () {
         //类似于jquery中的ready方法
         this.$nextTick(function () {
-           $.config = {
-    autoInit: true //no recommend
-  }
+    //        $.config = {
+    // autoInit: true //no recommend
+  // }
         })
 
     },
@@ -46,8 +46,8 @@ export default {
 }
 </script>
 <style>
-  @import "./css/light7.css";
-  /*@import "./css/indexTest.css";*/
+  /*@import "./css/light7.css";*/
+  @import "./css/indexTest.css";
 </style>
 
 
