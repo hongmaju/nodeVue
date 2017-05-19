@@ -5,7 +5,14 @@
    <img id="moveImgs" :src="now" alt="">
   <!--  <img src="../Images/1.jpg" alt=""> -->
 </div>
+/*
 
+ */
+
+
+/**
+ * 
+ */
 </template>
 
 <script>
