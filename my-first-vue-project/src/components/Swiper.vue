@@ -3,7 +3,7 @@
 <!--top轮播图片-->
 <div>
    <img id="moveImgs" :src="now" alt="">
-   <img src="../Images/1.jpg" alt="">
+  <!--  <img src="../Images/1.jpg" alt=""> -->
 </div>
 
 </template>
@@ -12,11 +12,11 @@
 
 export default {
   // import Store from './js/axios.min.js'
- 
+
 
     data () {
     return {
-    	pic:["./src/Images/1.jpg","./src/Images/2.jpg","./src/Images/3.jpg"],
+    	pic:["../Images/1.jpg","../Images/2.jpg","../Images/3.jpg"],
       now:require("../Images/1.jpg")
       
     }
@@ -25,7 +25,7 @@ export default {
   mounted:function () {
         //类似于jquery中的ready方法
         this.$nextTick(function () {
-    		//this.getPic();
+    		// this.getPic();
         })
 
     },
@@ -41,9 +41,10 @@ export default {
 			        if(i>=_this.pic.length){
 			        i=0;
 		       		}
-		       		 _this.now=_this.pic[i];
-		       		 var element = document.getElementById('moveImgs');
-				     element.src =  _this.now;
+		       		 // _this.now=_this.pic[i];
+               _this.now=require(_this.pic[i]);
+		       		 //var element = document.getElementById('moveImgs');
+				     //element.src =  _this.now;
 		       		console.log(_this.now);
 		       		 i++;
 		     },2000);
@@ -54,5 +55,5 @@ export default {
 }
 </script>
 <style>
-
+  @import "../css/Swiper.css";
 </style>
