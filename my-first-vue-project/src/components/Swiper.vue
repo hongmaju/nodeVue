@@ -25,31 +25,32 @@ export default {
   mounted:function () {
         //类似于jquery中的ready方法
         this.$nextTick(function () {
-    		// this.getPic();
+    		 this.getPic();
         })
 
     },
   methods:{
-  	getPic:function(){
+    getPic: function() {
+      var i = 0;
+      //alert(this.pic.data[0].url)
+      var _this = this;
+      setInterval(function() {
 
-				
-			var i=0;
-				//alert(this.pic.data[0].url)
- 				 var _this=this;
-	 			setInterval(function(){
+        if (i >= _this.pic.length) {
+          i = 0;
+        }
+        // _this.now=_this.pic[i];
+        // _this.now=require(_this.pic[i]);
+        console.log("\"" + _this.pic[i] + "\"");
+        // _this.now=require("../Images/2.jpg");
+        // _this.now = require("\"" + _this.pic[i] + "\"");
+        //var element = document.getElementById('moveImgs');
+        //element.src =  _this.now;
+        //console.log(_this.now);
+        i++;
+      }, 2000);
 
-			        if(i>=_this.pic.length){
-			        i=0;
-		       		}
-		       		 // _this.now=_this.pic[i];
-               _this.now=require(_this.pic[i]);
-		       		 //var element = document.getElementById('moveImgs');
-				     //element.src =  _this.now;
-		       		console.log(_this.now);
-		       		 i++;
-		     },2000);
-			
-		}
+    }
    }
   
 }
